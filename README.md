@@ -6,7 +6,7 @@ A small Web API to parse mail content and extract billing information such as ta
 Highlights
 - The app is built using .NET 8 Web API (`.NET 8`).
 - Global exception handling is implemented using the `ExceptionMiddleware` (registered in `Program.cs`).
-- Authorization is enforced via an authorization middleware — all API calls must include an `ApplicationKey` header.
+- Authorization is enforced via an authorization middleware â€” all API calls must include an `ApplicationKey` header.
 - `Constants.cs` stores error messages and other constant values used across the project.
 - Swagger is configured so you can explore and run the API endpoints via the Swagger UI.
 - Unit tests are implemented using the xUnit framework.
@@ -15,8 +15,8 @@ Highlights
 Configuration
 - App configuration values are in `appsettings.json` (and `appsettings.Development.json` for development).
 - Two important keys:
-  - `ClientAppUrl` — URL of the client application.
-  - `TaxRate` — default tax rate used by the parser.
+  - `ClientAppUrl` â€” URL of the client application.
+  - `TaxRate` â€” default tax rate used by the parser.
 
 Authentication / Calling the API
 - Add the following HTTP header to requests:
@@ -38,10 +38,16 @@ Unit tests
 
 
 Files of interest
-- `Program.cs` — app startup, middleware and swagger registration
-- `ExceptionMiddleware.cs` — global exception handling
-- `Constants.cs` — shared constant values and messages
-- `TextParserImplementation.cs` and its interface (e.g., `ITextParser`) — parser logic
-- `appsettings.json` / `appsettings.Development.json` — configuration
-- `Flowingly.API.UnitTest` — unit tests (xUnit)
+- `Program.cs` â€” app startup, middleware and swagger registration
+- `ExceptionMiddleware.cs` â€” global exception handling
+- `Constants.cs` â€” shared constant values and messages
+- `TextParserImplementation.cs` and its interface (e.g., `ITextParser`) â€” parser logic
+- `appsettings.json` / `appsettings.Development.json` â€” configuration
+- `Flowingly.API.UnitTest` â€” unit tests (xUnit)
+
+Running the Project
+
+- Build the project in Visual Studio 2022
+- Run the project.
+- To run the api in swagger, click on authorize in swagger and add teh API Key from appsettings.config.
 
