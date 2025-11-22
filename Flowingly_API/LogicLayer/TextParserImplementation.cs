@@ -67,7 +67,7 @@ namespace Flowingly.API.LogicLayer
 
                 // Get tax rate from configuration
                 var taxRateValue = _configuration["TaxRate"];
-                decimal taxRate = decimal.Parse(taxRateValue) / 100; // Convert percentage to decimal
+                decimal taxRate = decimal.Parse(taxRateValue); // Convert percentage to decimal
 
 
                 //calculate sales tax and total excluding tax
@@ -188,8 +188,8 @@ namespace Flowingly.API.LogicLayer
         {
             try
             {
-                decimal totalExcludingTax = decimal.Round(totalIncludingTax / (1 + taxRate), 2);
-                decimal salesTax = decimal.Round(totalIncludingTax - totalExcludingTax, 2);
+                decimal salesTax = decimal.Round(totalIncludingTax / taxRate, 2);
+                decimal totalExcludingTax = decimal.Round(totalIncludingTax - salesTax, 2);
 
                 return (salesTax, totalExcludingTax);
             }
